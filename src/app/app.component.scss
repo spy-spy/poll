@@ -1,0 +1,26 @@
+.wrapper {
+  height: 100%;
+  overflow: auto;
+  display: flex;
+
+  .nav {
+    height: 100%;
+    width: 30%;
+    padding: 1rem;
+  }
+
+  .content {
+    height: 100%;
+    width: 70%;
+    padding: 1rem;
+  }
+
+  a.active {
+    color: #ff4081;
+  }
+
+  mat-list mat-list-item a {
+    width: 100%;
+    text-align: left;
+  }
+}

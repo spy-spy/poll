@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+
+  .wrapper {
+    &.light-theme {
+      .nav,
+      .content {
+        background-color: white;
+        color: black;
+      }
+    }
+
+    &.dark-theme {
+      .nav,
+      .content {
+        background-color: black;
+        color: white;
+      }
+
+      .nav a {
+        color: white;
+      }
+
+      mat-list-item {
+        color: white;
+      }
+
+      .mat-form-field-underline {
+        background-color: white;
+      }
+      .mat-form-field-empty.mat-form-field-label,
+      .mat-select-value-text {
+        color: white;
+      }
+    }
+  }
+}

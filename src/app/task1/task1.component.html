@@ -1,0 +1,8 @@
+<h1>Task 1</h1>
+<mat-list>
+  <mat-list-item *ngFor="let post of poll$ | async; trackBy: trackById">
+    <mat-icon mat-list-icon>message</mat-icon>
+    <div mat-line> {{post.title}} </div>
+    <div mat-line> {{post.body}} </div>
+  </mat-list-item>
+</mat-list>

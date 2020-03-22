@@ -1,0 +1,19 @@
+<h1>Task 4</h1>
+<mat-form-field>
+  <input type="text" matInput [formControl]="control" placeholder="Search">
+</mat-form-field>
+<ng-container *ngIf="messages$ | async as messages">
+  <ng-container *ngIf="messages?.length > 0; else placeholderTemplate">
+    <mat-list>
+      <mat-list-item *ngFor="let message of messages; trackBy: trackById">
+        <mat-icon mat-list-icon>message</mat-icon>
+        <div mat-line> {{message.name}} </div>
+        <div mat-line> {{message.description}} </div>
+      </mat-list-item>
+    </mat-list>
+  </ng-container>
+</ng-container>
+
+<ng-template #placeholderTemplate>
+  No items found
+</ng-template>

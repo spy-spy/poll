@@ -1,0 +1,23 @@
+<h1>Task6</h1>
+<mat-spinner *ngIf="conversationsLoading$ | async; else selectTemplate"></mat-spinner>
+<ng-template #selectTemplate>
+  <mat-form-field>
+    <mat-label>Select conversation</mat-label>
+    <mat-select [formControl]="control" [value]="selectedConversationId$ | async">
+      <mat-option *ngFor="let conversation of conversations$ | async" [value]="conversation.id">
+        {{conversation.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-spinner *ngIf="messageLoading$ | async; else messagesTemplate"></mat-spinner>
+</ng-template>
+
+<ng-template #messagesTemplate>
+  <mat-list>
+    <mat-list-item *ngFor="let message of messages$ | async; trackBy: trackById">
+      <mat-icon mat-list-icon>message</mat-icon>
+      <div mat-line>{{message.email}} {{message.name}}</div>
+      <div mat-line> {{message.body}} </div>
+    </mat-list-item>
+  </mat-list>
+</ng-template>

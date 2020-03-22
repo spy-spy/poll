@@ -1,0 +1,9 @@
+<div>
+  <h1>Task 5</h1>
+  <mat-radio-group [value]="theame$ | async" (change)="onThemeChange($event)">
+    <label>Theame:</label>
+    <mat-radio-button *ngFor="let theame of theames" [value]="theame">
+      {{theame}}
+    </mat-radio-button>
+  </mat-radio-group>
+</div>

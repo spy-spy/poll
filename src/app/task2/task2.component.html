@@ -1,0 +1,13 @@
+<h1>Task 2</h1>
+<div>
+  <button *ngIf="isLoggedIng$ | async; else loginTemplate" mat-raised-button color="primary"
+    (click)="onLogout()">Logout</button>
+  <ng-template #loginTemplate>
+    <button mat-raised-button color="primary" (click)="onLogin()">
+      Login
+    </button>
+  </ng-template>
+  <div>
+    {{loggedInMessage$ | async}}
+  </div>
+</div>
